@@ -3,7 +3,7 @@
     window.ContadorVisitas = {
       // Configuración por defecto
       config: {
-        apiUrl: 'http://localhost:3000/api/contador',
+        apiUrl: 'https://contador-visitas-jvjx.onrender.com/api/contador',
         autoIncremento: true,
         tema: 'claro'
       },
