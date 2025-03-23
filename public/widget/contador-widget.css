@@ -1,0 +1,35 @@
+/* public/widget/contador-widget.css */
+.contador-widget {
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    padding: 10px 15px;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 10px 0;
+  }
+  
+  .contador-widget.tema-claro {
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid #ddd;
+  }
+  
+  .contador-widget.tema-oscuro {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+  }
+  
+  .contador-contenido {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .contador-texto {
+    font-weight: bold;
+  }
+  
+  .contador-valor {
+    font-size: 1.2em;
+  }
