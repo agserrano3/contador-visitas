@@ -1,8 +1,7 @@
 // server.js
-const path = require("path");
-const express = require("express");
-const cors = require("cors");
-const { createRequestHandler } = require("@remix-run/express");
+import express from "express";
+import cors from "cors";
+import { createRequestHandler } from "@remix-run/express";
 
 const app = express();
 
@@ -20,10 +19,13 @@ app.use(express.static("public"));
 // Configurar Remix handler para manejar las rutas
 app.all(
   "*",
-  createRequestHandler({
-    build: require("./build"),
-    mode: process.env.NODE_ENV
-  })
+  async (req, res, next) => {
+    const build = await import("./build/index.js");
+    return createRequestHandler({
+      build,
+      mode: process.env.NODE_ENV
+    })(req, res, next);
+  }
 );
 
 const port = process.env.PORT || 3000;
