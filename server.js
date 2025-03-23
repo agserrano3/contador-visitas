@@ -20,15 +20,20 @@ app.use(express.static("public"));
 app.all(
   "*",
   async (req, res, next) => {
-    const build = await import("./build/index.js");
-    return createRequestHandler({
-      build,
-      mode: process.env.NODE_ENV
-    })(req, res, next);
+    try {
+      const build = await import("./build/index.js");
+      return createRequestHandler({
+        build,
+        mode: 'development'
+      })(req, res, next);
+    } catch (error) {
+      console.error("Error loading build:", error);
+      next(error);
+    }
   }
 );
 
-const port = process.env.PORT || 3000;
+const port = 3000;
 app.listen(port, () => {
   console.log(`Servidor ejecutándose en http://localhost:${port}`);
 });

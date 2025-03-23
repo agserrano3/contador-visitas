@@ -4,9 +4,9 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-  "dev": "node server.js",
-  "build": "remix build",
-  "start": "NODE_ENV=production node server.js"
+    "dev": "node server.cjs",
+    "build": "remix build",
+    "start": "NODE_ENV=production node server.cjs"
   },
   "dependencies": {
     "@remix-run/node": "^2.16.2",

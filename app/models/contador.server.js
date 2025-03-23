@@ -12,7 +12,7 @@ function incrementarContador() {
   return contador;
 }
 
-module.exports = {
+export {
   obtenerContador,
   incrementarContador
 };
